@@ -1,0 +1,304 @@
+.page { max-width: 720px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+
+.back {
+  display: flex; align-items: center; gap: 6px;
+  background: none; border: none;
+  color: var(--text3); font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+  transition: color 0.2s;
+}
+.back:hover { color: var(--accent); }
+
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  border-radius: var(--radius);
+  padding: 2rem;
+  margin-bottom: 1.25rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.header {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.badges { display: flex; gap: 8px; }
+.badge {
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 5px 14px; border-radius: 99px;
+}
+.lost { background: rgba(248, 113, 113, 0.12); color: var(--red); }
+.found { background: rgba(52, 211, 153, 0.12); color: var(--green); }
+.resolved {
+  font-size: 0.72rem; font-weight: 700;
+  background: rgba(45, 212, 191, 0.1); color: var(--teal);
+  padding: 5px 14px; border-radius: 99px;
+}
+.time { font-size: 0.78rem; color: var(--text3); }
+
+/* Item image */
+.detailImage {
+  width: 100%;
+  max-height: 340px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  border: 1px solid rgba(99, 102, 241, 0.1);
+}
+.detailImage img {
+  width: 100%;
+  height: 100%;
+  max-height: 340px;
+  object-fit: cover;
+  display: block;
+}
+
+.title {
+  font-family: var(--font-head);
+  font-size: 1.6rem; font-weight: 800;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.metaItem {
+  display: flex; align-items: flex-start; gap: 12px;
+  background: rgba(99, 102, 241, 0.04);
+  border: 1px solid rgba(99, 102, 241, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  transition: all 0.2s;
+}
+.metaItem:hover {
+  border-color: rgba(99, 102, 241, 0.2);
+  background: rgba(99, 102, 241, 0.06);
+}
+.metaItem svg { color: var(--accent); margin-top: 2px; flex-shrink: 0; }
+.metaItem > div { display: flex; flex-direction: column; gap: 3px; }
+.metaLabel { font-size: 0.7rem; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; }
+.metaVal { font-size: 0.9rem; color: var(--text); font-weight: 500; }
+.contact { font-size: 0.9rem; color: var(--accent); transition: color 0.2s; }
+.contact:hover { color: #a5b4fc; }
+
+.desc { margin-bottom: 1.25rem; }
+.desc h3 { font-family: var(--font-head); font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; color: var(--text2); }
+.desc p { font-size: 0.92rem; color: var(--text2); line-height: 1.7; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.5rem; }
+.tag {
+  font-size: 0.75rem; color: var(--accent);
+  background: rgba(99, 102, 241, 0.06);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  padding: 4px 12px; border-radius: 99px;
+  transition: all 0.2s;
+}
+.tag:hover { background: rgba(99, 102, 241, 0.12); }
+
+.actions { display: flex; gap: 10px; align-items: center; }
+.resolveBtn {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(52, 211, 153, 0.08);
+  border: 1.5px solid var(--green);
+  color: var(--green);
+  padding: 10px 20px; border-radius: 12px;
+  font-size: 0.85rem; font-weight: 700;
+  transition: all 0.25s ease;
+}
+.resolveBtn:hover {
+  background: rgba(52, 211, 153, 0.15);
+  box-shadow: 0 4px 15px rgba(52, 211, 153, 0.2);
+  transform: translateY(-1px);
+}
+.reopenBtn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1.5px solid rgba(99, 102, 241, 0.12);
+  color: var(--text2);
+  padding: 10px 20px; border-radius: 12px;
+  font-size: 0.85rem; font-weight: 600;
+  transition: all 0.2s;
+}
+.reopenBtn:hover { border-color: rgba(99, 102, 241, 0.3); color: var(--text); }
+.deleteBtn {
+  display: flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px;
+  background: rgba(248, 113, 113, 0.06);
+  border: 1.5px solid rgba(248, 113, 113, 0.2);
+  color: var(--red);
+  border-radius: 12px;
+  margin-left: auto;
+  transition: all 0.2s;
+}
+.deleteBtn:hover {
+  background: rgba(248, 113, 113, 0.15);
+  box-shadow: 0 4px 12px rgba(248, 113, 113, 0.15);
+}
+
+.contactBox {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  backdrop-filter: blur(10px);
+}
+.contactBox h3 { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+.contactBox p { font-size: 0.85rem; color: var(--text2); margin-bottom: 1.25rem; line-height: 1.6; }
+.emailBtn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #ffffff;
+  padding: 10px 22px; border-radius: 12px;
+  font-size: 0.85rem; font-weight: 700;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.25);
+}
+.emailBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.35);
+}
+
+.notFound {
+  text-align: center; padding: 5rem 1rem;
+}
+.notFound h2 { font-family: var(--font-head); font-size: 1.3rem; margin-bottom: 1rem; }
+.notFound a { color: var(--accent); }
+
+/* ===== CLAIM SYSTEM ===== */
+.claimedBadge {
+  font-size: 0.72rem; font-weight: 700;
+  background: rgba(99, 102, 241, 0.1); color: var(--accent);
+  padding: 5px 14px; border-radius: 99px;
+}
+
+.claimSection {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  margin-bottom: 1.25rem;
+  backdrop-filter: blur(10px);
+}
+.claimSection h3 {
+  font-family: var(--font-head);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: flex; align-items: center; gap: 8px;
+}
+.claimSection > p {
+  font-size: 0.85rem;
+  color: var(--text2);
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+
+.claimBtn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #fff;
+  border: none;
+  padding: 10px 22px; border-radius: 12px;
+  font-size: 0.88rem; font-weight: 700;
+  transition: all 0.25s;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.25);
+}
+.claimBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.35);
+}
+
+.claimForm {
+  background: rgba(99, 102, 241, 0.04);
+  border: 1px solid rgba(99, 102, 241, 0.12);
+  border-radius: 14px;
+  padding: 1.25rem;
+  animation: slideDown 0.25s ease-out;
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.claimFormHeader {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 12px;
+}
+.claimFormHeader strong { font-size: 0.85rem; color: var(--text); }
+.claimFormHeader button {
+  background: none; border: none; color: var(--text3);
+  padding: 4px; transition: color 0.2s;
+}
+.claimFormHeader button:hover { color: var(--text); }
+.claimForm textarea {
+  margin-bottom: 12px;
+}
+.claimSubmitBtn {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #fff; border: none;
+  padding: 9px 20px; border-radius: 10px;
+  font-size: 0.85rem; font-weight: 700;
+  transition: all 0.25s;
+}
+.claimSubmitBtn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+.claimSubmitBtn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.claimSuccess {
+  background: rgba(52, 211, 153, 0.08);
+  border: 1px solid rgba(52, 211, 153, 0.2);
+  color: var(--green);
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  display: flex; align-items: center; gap: 8px;
+  animation: slideDown 0.3s ease-out;
+}
+
+.claimInfo {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: rgba(99, 102, 241, 0.04);
+  border: 1px solid rgba(99, 102, 241, 0.12);
+  border-radius: 14px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+.claimInfoIcon { font-size: 1.5rem; flex-shrink: 0; }
+.claimInfo strong { font-size: 0.88rem; display: block; margin-bottom: 4px; }
+.claimInfo p { font-size: 0.8rem; color: var(--text2); margin: 0 0 4px; }
+.claimMsgText {
+  font-style: italic;
+  color: var(--accent) !important;
+  margin-top: 6px !important;
+}
+.unclaimBtn {
+  background: rgba(248, 113, 113, 0.08);
+  border: 1px solid rgba(248, 113, 113, 0.2);
+  color: var(--red);
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-top: 8px;
+  transition: all 0.2s;
+}
+.unclaimBtn:hover {
+  background: rgba(248, 113, 113, 0.15);
+}
+
+@media (max-width: 560px) {
+  .card { padding: 1.25rem; }
+  .meta { grid-template-columns: 1fr; }
+  .claimSection { padding: 1.25rem; }
+}

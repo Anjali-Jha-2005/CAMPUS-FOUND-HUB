@@ -1,0 +1,370 @@
+.page { max-width: 800px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+
+/* ── Save toast ── */
+.toast {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #059669, #34d399);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 99px;
+  box-shadow: 0 8px 30px rgba(52, 211, 153, 0.35);
+  z-index: 999;
+  animation: slideDown 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateX(-50%) translateY(-18px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* ── Profile card ── */
+.profileCard {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(99, 102, 241, 0.12);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.profileGlow {
+  position: absolute;
+  top: -60px; left: 50%; transform: translateX(-50%);
+  width: 300px; height: 200px;
+  background: radial-gradient(ellipse, rgba(99, 102, 241, 0.15), transparent);
+  pointer-events: none;
+}
+.avatar {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+  animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+@keyframes bounceIn {
+  from { transform: scale(0.3); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.name {
+  font-family: var(--font-head);
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+.email, .joined {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--text2);
+  margin-bottom: 0.3rem;
+}
+.bio {
+  font-size: 0.88rem;
+  color: var(--text2);
+  max-width: 420px;
+  margin: 0.6rem auto 0.2rem;
+  line-height: 1.5;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+/* ── Edit Button ── */
+.editBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 1.2rem;
+  padding: 10px 26px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), #818cf8);
+  border: none;
+  border-radius: 99px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+}
+.editBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.45);
+}
+
+/* ── Edit Form ── */
+.editForm {
+  text-align: left;
+  position: relative;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.editHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.editTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-head);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text);
+}
+.closeBtn {
+  background: rgba(248, 113, 113, 0.1);
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, 0.15);
+  border-radius: 10px;
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.closeBtn:hover {
+  background: rgba(248, 113, 113, 0.2);
+  transform: scale(1.08);
+}
+
+/* ── Avatar Grid ── */
+.avatarGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.avatarChoice {
+  width: 48px; height: 48px;
+  font-size: 1.5rem;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 2px solid rgba(99, 102, 241, 0.08);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.avatarChoice:hover {
+  border-color: rgba(99, 102, 241, 0.3);
+  background: rgba(99, 102, 241, 0.06);
+  transform: scale(1.1);
+}
+.avatarSelected {
+  border-color: var(--accent) !important;
+  background: rgba(99, 102, 241, 0.12) !important;
+  box-shadow: 0 0 16px rgba(99, 102, 241, 0.25);
+  transform: scale(1.1);
+}
+
+/* ── Fields ── */
+.fieldGroup {
+  margin-bottom: 1.25rem;
+}
+.fieldLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text2);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+.fieldInput, .fieldTextarea {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 0.88rem;
+  font-family: var(--font-body, inherit);
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(99, 102, 241, 0.12);
+  border-radius: 12px;
+  outline: none;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+.fieldInput:focus, .fieldTextarea:focus {
+  border-color: var(--accent);
+  background: rgba(99, 102, 241, 0.05);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.08);
+}
+.fieldInput::placeholder, .fieldTextarea::placeholder {
+  color: var(--text3);
+  opacity: 0.6;
+}
+.fieldTextarea {
+  resize: vertical;
+  min-height: 80px;
+  line-height: 1.5;
+}
+
+/* ── Edit Actions ── */
+.editActions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+.cancelBtn {
+  padding: 10px 24px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text2);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.cancelBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(99, 102, 241, 0.2);
+}
+.saveBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 28px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), #818cf8);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+}
+.saveBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.45);
+}
+
+/* ── Stats Row ── */
+.statsRow {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(99, 102, 241, 0.1);
+}
+.stat { text-align: center; }
+.statNum {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: var(--font-head);
+  color: var(--accent);
+}
+.green { color: var(--green) !important; }
+.statLabel { font-size: 0.72rem; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* ── Activity Sections ── */
+.sections { margin-bottom: 2rem; }
+.section { margin-bottom: 1.5rem; }
+.sectionTitle {
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.emptyText { font-size: 0.85rem; color: var(--text3); }
+
+.itemList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.itemRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(99, 102, 241, 0.08);
+  border-radius: 12px;
+  color: var(--text);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.itemRow:hover {
+  border-color: rgba(99, 102, 241, 0.25);
+  background: rgba(99, 102, 241, 0.04);
+  transform: translateX(4px);
+}
+.itemRow strong { font-size: 0.9rem; display: block; margin-bottom: 4px; }
+.itemMeta {
+  display: flex;
+  gap: 12px;
+}
+.itemMeta span {
+  display: flex; align-items: center; gap: 4px;
+  font-size: 0.72rem; color: var(--text3);
+}
+
+.itemRight { text-align: right; }
+.statusBadge {
+  font-size: 0.7rem; font-weight: 700;
+  padding: 3px 10px; border-radius: 99px;
+  text-transform: capitalize;
+}
+.open { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+.resolved { background: rgba(52, 211, 153, 0.1); color: var(--green); }
+.itemTime { display: block; font-size: 0.7rem; color: var(--text3); margin-top: 4px; }
+
+/* ── Quick Actions ── */
+.quickActions { margin-bottom: 2rem; }
+.quickActions h3 {
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.actionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+.actionCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 1.5rem 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(99, 102, 241, 0.1);
+  border-radius: 14px;
+  color: var(--text);
+  text-decoration: none;
+  transition: all 0.25s ease;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.actionCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(99, 102, 241, 0.3);
+  background: rgba(99, 102, 241, 0.05);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.1);
+}
+.actionEmoji { font-size: 1.8rem; }
+
+@media (max-width: 600px) {
+  .editForm { padding: 0 0.5rem; }
+  .avatarGrid { justify-content: center; }
+  .editActions { flex-direction: column; }
+  .cancelBtn, .saveBtn { width: 100%; justify-content: center; }
+  .statsRow { gap: 1.5rem; }
+}
